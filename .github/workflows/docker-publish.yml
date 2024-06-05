@@ -30,26 +30,6 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-
-  sendmail: 
-    runs-on: ubuntu-latest
-    steps: 
-      - name: Send Email
-        uses: hilarion5/send-mail@v1
-        with:
-          smtp-server: smtp.freesmtpservers.com
-          smtp-port: 25
-          smtp-secure: false
-          from-email: gzze@hmaaa.com
-          to-email: gzze@hmaaa.com
-          username: yourusername
-          password: yourpassword
-          subject: Test Email
-          body: This is a test email sent from GitHub Actions.
-          html: |
-            <h1>This is a test email</h1>
-            <p>Test Paragraph</p> 
-
   build:
     runs-on: ubuntu-latest
     permissions:
@@ -121,3 +101,18 @@ jobs:
         # This step uses the identity token to provision an ephemeral certificate
         # against the sigstore community Fulcio instance.
         run: echo "${TAGS}" | xargs -I {} cosign sign --yes {}@${DIGEST}
+      - name: Send Email
+        uses: hilarion5/send-mail@v1
+        with:
+          smtp-server: smtp.freesmtpservers.com
+          smtp-port: 25
+          smtp-secure: false
+          from-email: gzze@hmaaa.com
+          to-email: gzze@hmaaa.com
+          username: yourusername
+          password: yourpassword
+          subject: Test Email
+          body: This is a test email sent from GitHub Actions.
+          html: |
+            <h1>This is a test email</h1>
+            <p>Test Paragraph</p> 
