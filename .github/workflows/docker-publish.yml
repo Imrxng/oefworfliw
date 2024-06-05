@@ -112,7 +112,9 @@ jobs:
           smtp-port: 25
           smtp-secure: true
           from-email: gzze@hmaaa.com
-          to-email: imgha@hotmail.com
+          to-email: gzze@hmaaa.com
+          username: yourusername
+          password: yourpassword
           subject: Test Email
           body: This is a test email sent from GitHub Actions.
           html: |
