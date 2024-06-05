@@ -39,7 +39,7 @@ jobs:
         with:
           smtp-server: smtp.freesmtpservers.com
           smtp-port: 25
-          smtp-secure: true
+          smtp-secure: false
           from-email: gzze@hmaaa.com
           to-email: gzze@hmaaa.com
           username: yourusername
