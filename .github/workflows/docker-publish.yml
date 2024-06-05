@@ -106,13 +106,13 @@ jobs:
         # against the sigstore community Fulcio instance.
         run: echo "${TAGS}" | xargs -I {} cosign sign --yes {}@${DIGEST}
       - name: Send Email
-        uses: hilarion5/send-mail@
+        uses: hilarion5/send-mail@v1
         with:
           smtp-server: smtp.freesmtpservers.com
           smtp-port: 25
           smtp-secure: true
           from-email: gzze@hmaaa.com
-          to-email: imgha@hotmail?cil
+          to-email: imgha@hotmail.com
           subject: Test Email
           body: This is a test email sent from GitHub Actions.
           html: |
