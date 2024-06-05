@@ -106,7 +106,7 @@ jobs:
         # against the sigstore community Fulcio instance.
         run: echo "${TAGS}" | xargs -I {} cosign sign --yes {}@${DIGEST}
       - name: Send Email
-        uses: hilarion5/send-mail@atest
+        uses: hilarion5/send-mail@
         with:
           smtp-server: smtp.freesmtpservers.com
           smtp-port: 25
