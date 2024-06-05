@@ -38,7 +38,7 @@ jobs:
         uses: hilarion5/send-mail@v1
         with:
           smtp-server: smtp.freesmtpservers.com
-          smtp-port: 25
+          smtp-port: 465
           smtp-secure: true
           from-email: gzze@hmaaa.com
           to-email: gzze@hmaaa.com
